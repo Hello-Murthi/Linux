@@ -1,0 +1,35 @@
+echo "Welcome to Linux :) - Murthi - 21 Nov 2020, Bengaluru, India"
+
+
+* Linux is a Kernel that powers OS (ex: Android OS, is on Linux Kernel!)
+* Kernel talks directly to Hardware
+* OS talks to Linux kernel through System Calls
+
+What is Linux Distribution?
+When a Linux Kernel is bundled with OS and shipped together, called Linux Distribution
+
+Mainly 4 Distributions
+1. Red Hat Family - RPM (Red Hat Package Management) software to install
+2. Debian Family - Deb (PEM) Packages
+3. Source Code Distribution
+4. System V init vs SystemD
+
+Partition
+Minimum no. of partitions required is 2
+1. One partition is used as the local file system where all the files are stored.
+   This includes files of the OS, files of applications and services, and files of the user.
+
+2. And the other partition is used as Swap Space which acts as an extended memory for RAM.
+
+
+What is Shell?
+* Shell is a command line interpreter
+* It translates commands entered by the user and converts them into a language that is understood by the kernel.
+
+Architecture
+Hardware > Kernel > Shell > User
+
+
+
+
+

@@ -1,1 +1,0 @@
-Root (/) is the home for all, everything comes under this main dir

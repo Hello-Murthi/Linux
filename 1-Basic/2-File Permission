@@ -1,0 +1,61 @@
+File Permission:
+
+Owner permissions
+The owner's permissions determine what actions the owner of the file can perform on the file.
+
+Group permissions
+The group's permissions determine what actions a user, who is a member of the group that a file belongs to, can perform on the file.
+
+Other (world) permissions
+The permissions for others indicate what action all other users can perform on the file
+
+Changing Permissions
+
++ = Adds the designated permission(s) to a file or directory.
+- = Removes the designated permission(s) from a file or directory.
+= = Sets the designated permission(s).
+
+$chmod o+wx testfile
+$ls -l testfile
+-rwxrwxrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+$chmod u-x testfile
+$ls -l testfile
+-rw-rwxrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+$chmod g = rx testfile
+$ls -l testfile
+-rw-r-xrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+
+
+
+
+Number	Octal Permission Representation	                            Ref
+0	    No permission	                                            ---
+1	    Execute permission	                                        --x
+2	    Write permission	                                        -w-
+3	    Execute and write permission: 1 (execute) + 2 (write) = 3	-wx
+4	    Read permission	                                            r--
+5	    Read and execute permission: 4 (read) + 1 (execute) = 5	    r-x
+6	    Read and write permission: 4 (read) + 2 (write) = 6	        rw-
+7	    All permissions: 4 (read) + 2 (write) + 1 (execute) = 7	    rwx
+
+
+
+$ chmod 755 testfile
+$ls -l testfile
+-rwxr-xr-x  1 amrood   users 1024  Nov 2 00:10  testfile
+$chmod 743 testfile
+$ls -l testfile
+-rwxr---wx  1 amrood   users 1024  Nov 2 00:10  testfile
+$chmod 043 testfile
+$ls -l testfile
+----r---wx  1 amrood   users 1024  Nov 2 00:10  testfile
+
+
+Changing Owners and Groups
+
+chown − The chown command stands for "change owner" and is used to change the owner of a file.
+
+chgrp − The chgrp command stands for "change group" and is used to change the group of a file.
+
+$ chown user filelist
+$ chgrp group filelist

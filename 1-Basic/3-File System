@@ -1,0 +1,52 @@
+What is File System?
+All the data of Unix is organized into files.
+All files are then organized into directories.
+These directories are further organized into a tree-like structure called the filesystem.
+
+
+
+Everything in Unix is considered to be a file, including physical devices such as DVD-ROMs, USB devices, and floppy drives.
+
+
+
+Directory Structure
+Root (/) is the home for all, everything comes under this main dir
+
+/ = This is the root directory which should contain only the directories needed at the top level of the file structure
+
+/bin = This is where the executable files are located. These files are available to all users
+
+/dev = These are device drivers
+
+/etc = Supervisor directory commands, configuration files, disk configuration files, valid user lists, groups, ethernet, hosts, where to send critical messages
+
+/lib = Contains shared library files and sometimes other kernel-related files
+
+/boot = Contains files for booting the system
+
+/home = Contains the home directory for users and other accounts
+
+/mnt = Used to mount other temporary file systems, such as cdrom and floppy for the CD-ROM drive and floppy diskette drive, respectively
+
+/tmp = Holds temporary files used between system boots
+
+/usr = Used for miscellaneous purposes, and can be used by many users. Includes administrative commands, shared files, library files, and others
+
+/var = Typically contains variable-length files such as log and print files and any other type of file that may contain a variable amount of data
+
+/sbin = Contains binary (executable) files, usually for system administration. For example, fdisk and ifconfig utlities
+
+/kernel = Contains kernel files
+
+
+
+
+
+The df (disk free) Command
+
+
+Mount
+A file system must be mounted in order to be usable by the system
+
+mount = to mount
+unmount = to un mount
