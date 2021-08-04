@@ -43,6 +43,14 @@
 
 * cron (schedule tasks to be executed) Ex: 30 08 10 06 * /home/murthi/file
 
+* kill PID (kill process)
+
+* tail -10 (see last lines of large file)
+
+* bg (to start a job in background, ctrl+z on process and type bg)
+
+* jobs (see all jobs)
+
 -------------------------------------------------------------------------------
 
 * cd (change dir)

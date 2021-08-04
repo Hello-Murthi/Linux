@@ -92,11 +92,17 @@ To execute remote commands
 
 * netstat -at (which ports available)
 
+* ping host (see host is alive or not)
+
+* telnet host (same as above)
+
 * nslookup google.com (see DNS details or connection)
 
 * curl (to transfer data to/from server)
 
 * apt-get (handle packages in linux)
+
+* scp src dst (copy file from remote server)
 
 -------------------------------------------------------------------------------
 
