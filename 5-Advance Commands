@@ -1,0 +1,105 @@
+
+-------------------------------------------------------------------------------
+
+* lsof (list of opened file or files which are running now)
+
+* lscpu (check cpu details/cores)
+
+* id murthi (list IDs of users and groups it belongs to)
+
+* tar -cvf file (compress to .tar)
+ 
+* tar -xvf file (decompress to .tar)
+
+* cut -c1 file (show file portion or coloumn, he 1st coloumn)
+
+* cut -c1-2 file (1st and 2nd coloumn)
+
+* sed 's/murthi/anusha/' file (replace murthi with anusha)
+
+* uniq file (remove duplicate lines)
+
+* watch -d (see the output of a process, by default runs every 2 sec)
+
+* Ex: watch -d free -m
+
+* history (see all cmds executed till now)
+
+* tr (translate)
+
+* cat file | tr "[a-z]" "[A-Z]" (relaces all small to with upper case)
+
+* env (environment variables)
+
+-------------------------------------------------------------------------------
+
+* awk (script language, used to manupulate data and generate report)
+
+* awk '{print}' file (print every line)
+
+* awk '/naganna/ {print}' file (print if any line has naganna)
+
+* awk '{print $1,$4}' file (print 1 and 4th coloumn)
+
+-------------------------------------------------------------------------------
+
+* free -m 
+
+* -m -b -k -g (MB, Bytes, Kilo Bytes, Giga Bytes)
+
+
+
+* "total        used        free      shared  buff/cache   available"
+
+* total - total installed memory
+
+* used - used memory
+
+* free - unused memory
+
+* shared - memory used by tmp files
+
+* buffers - memory used by kernel buffers
+
+* cached - memory used by the page cache 
+
+* buffers/cache - sum of buffers and cache
+
+
+What is Buffer Memory?
+Is a portion of a computer's memory that is set aside as a temporary holding place for data
+
+Cache Memory
+Recently used memory
+
+-------------------------------------------------------------------------------
+
+* SSH (Secure Shell)
+
+A cryptographic network protocol, for operating services securely
+To execute remote commands
+
+
+* ssh-keygen (generate public/private keys, means to connect remote system without password)
+
+-------------------------------------------------------------------------------
+
+* ifconfig (interface config)
+
+* ip (advanced command of ifconfig)
+
+* netstat (see network statistics) 
+
+* netstat -at (which ports available)
+
+* nslookup google.com (see DNS details or connection)
+
+* curl (to transfer data to/from server)
+
+* apt-get (handle packages in linux)
+
+-------------------------------------------------------------------------------
+
+* df -h (disk free in human readble)
+
+* du (disk usage same or see which is consuming lot of disk)

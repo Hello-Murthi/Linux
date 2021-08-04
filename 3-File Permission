@@ -1,0 +1,41 @@
+
+-------------------------------------------------------------------------------
+
+* Owner permissions
+
+* Group permissions
+
+* Other permissions
+
+* + (adds permission to a file or dir)
+
+* - (remove permission to a file or dir)
+
+* d (dir)
+
+* - (file)
+
+-------------------------------------------------------------------------------
+
+0 - No Permission
+1 - Execute
+2 - Write
+3 - Execute + Write
+4 - Read
+5 - Read + Execute
+6 - Read + Write
+7 - All Permissions
+
+* Format - rwx
+
+-------------------------------------------------------------------------------
+
+* chmod 755 file
+
+* chmod u-x file (remove execute for user)
+
+* chown root file (change owner, now root is owner)
+
+* chgrp group file (change group)
+
+-------------------------------------------------------------------------------
