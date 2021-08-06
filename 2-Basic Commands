@@ -39,6 +39,8 @@
 
 * diff file1 file2 (differentiate)
 
+* wc file (Count no. of char)
+
 * export (set and reload the environment variables)
 
 * cron (schedule tasks to be executed) Ex: 30 08 10 06 * /home/murthi/file
@@ -50,6 +52,12 @@
 * bg (to start a job in background, ctrl+z on process and type bg)
 
 * jobs (see all jobs)
+
+* gunzip (uncompress gzip files)
+
+* mount -l (see list of mounted devices)
+
+* zcat sample.z (see content of z format)
 
 -------------------------------------------------------------------------------
 

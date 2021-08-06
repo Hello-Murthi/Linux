@@ -1,30 +1,206 @@
-echo "Welcome to Linux :) - Murthi - 21 Nov 2020, Bengaluru, India"
 
+-------------------------------------------------------------------------------
 
-* Linux is a Kernel that powers OS (ex: Android OS, is on Linux Kernel!)
-* Kernel talks directly to Hardware
-* OS talks to Linux kernel through System Calls
+* User -> OS (System Calls) | Shell -> Linux Kernel -> Hardware
 
-What is Linux Distribution?
-When a Linux Kernel is bundled with OS and shipped together, called Linux Distribution
+-------------------------------------------------------------------------------
 
-Mainly 4 Distributions
-1. Red Hat Family - RPM (Red Hat Package Management) software to install
-2. Debian Family - Deb (PEM) Packages
-3. Source Code Distribution
-4. System V init vs SystemD
+* Linux is bundled with OS and shipped - Linux Distribution
 
-Partition
-Minimum no. of partitions required is 2
-1. One partition is used as the local file system where all the files are stored.
-   This includes files of the OS, files of applications and services, and files of the user.
+-------------------------------------------------------------------------------
 
-2. And the other partition is used as Swap Space which acts as an extended memory for RAM.
+* 2 Partition 
+   
+   1. local file system 
+   
+   2. Swap Space - acts as an extended memory for RAM
 
+-------------------------------------------------------------------------------
 
 What is Shell?
-* Shell is a command line interpreter
-* It translates commands entered by the user and converts them into a language that is understood by the kernel.
 
-Architecture
-Hardware > Kernel > Shell > User
+* Shell is a command line interpreter
+
+* It translates user commands to kernel
+
+-------------------------------------------------------------------------------
+
+What are basic elements or components of Linux?
+
+   * User
+   * App
+   * Shell
+   * Kernel
+   * Hardware
+
+-------------------------------------------------------------------------------
+
+What is BASH?
+
+   * Bourne Again Shell
+   * Command language interpreter
+   * Same as Bourne Shell but includes additional features
+   * It is default shell on most Linux
+
+-------------------------------------------------------------------------------
+
+What are two types of Linux User Mode?
+
+   * Command Line 
+   * GUI
+
+-------------------------------------------------------------------------------
+
+What is LILO?
+
+Linux Loader is a bootloader for Linux that is used to load Linux into memory and start the OS
+
+-------------------------------------------------------------------------------
+
+What is swap space?
+
+Is a space on a hard disk that is used when RAM is full
+
+Should be double of RAM
+
+-------------------------------------------------------------------------------
+
+What are Process States in Linux?
+
+   * New/Ready
+   * Running
+   * Wait
+   * Terminated
+
+-------------------------------------------------------------------------------
+
+What is Linux Shell?
+
+Executing commands and communication with Linux OS
+
+   * BASH (Bourne Again Shell)
+   * Bourne Shell
+   * CSH (C Shell)
+   * KSH (Korn Shell)
+   * ZSH
+   * TCSH
+
+-------------------------------------------------------------------------------
+
+Maximum length for a filename under Linux is 255 bytes 
+
+-------------------------------------------------------------------------------
+
+What is daemon?
+
+Daemons also referred to as the background process, is a long-running Linux program that runs in the background
+
+-------------------------------------------------------------------------------
+
+What is a Zombie Process?
+
+Is a process that has finished the execution, but its entry remains in the process table
+
+-------------------------------------------------------------------------------
+
+What is Shell Script?
+
+Is a script especially written for shell
+
+-------------------------------------------------------------------------------
+
+What is INODE and Process Id?
+
+It is a unique name given to each file by OS. Each inode has a unique inode number within a file system
+
+It stores various information about files in Linux such as ownership, file size, file type, access mode, number of links, etc.  
+
+-------------------------------------------------------------------------------
+
+What is Process ID?
+
+It is a unique Id given to each process. It is simply used to uniquely identify an active process throughout the system until the process terminates
+
+-------------------------------------------------------------------------------
+
+The first process started by the kernel in Linux is “init” and its process id is 1.
+
+-------------------------------------------------------------------------------
+
+
+
+
+
+Linux Networking
+
+-------------------------------------------------------------------------------
+
+HTTP - 80
+HTTPS - 443
+SSH - 22
+
+-------------------------------------------------------------------------------
+
+What is netstat command?
+
+Networking tool used for troubleshooting, configuration and display all network connections on a system
+
+-------------------------------------------------------------------------------
+
+What is the ping command?
+
+Is used to check connection status between source and destination
+
+-------------------------------------------------------------------------------
+
+netstat -ntlp - check all the listening ports and servicess
+
+-------------------------------------------------------------------------------
+
+dmesg - review boot messages
+
+-------------------------------------------------------------------------------
+
+What is UNIX?
+
+   * Not Open Source
+   * No Free
+   * Handles multiple users at same time
+   * Ex: Solaris
+
+-------------------------------------------------------------------------------
+
+DOS (Disk Operating System)
+
+It is an OS that runs from a hard disk 
+
+It was the first OS system used by IBM
+
+-------------------------------------------------------------------------------
+
+What is Samba?
+
+Samba is an open-source software suite
+
+Used to connect Linux machines to Microsoft network resources
+
+-------------------------------------------------------------------------------
+
+Latch (temporary storage device)
+
+-------------------------------------------------------------------------------
+
+What are symbolic links?
+
+Symbolic links act similarly to shortcuts in Windows. Such links point to programs, files or directories
+
+Access to it without having to go directly to the entire pathname
+
+-------------------------------------------------------------------------------
+
+Hard link:
+   Points directly to the physical file on disk, not on the pathname
+   Means that if you rename or move the original file
+
+Soft link:
+   Points to file path
