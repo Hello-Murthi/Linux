@@ -74,7 +74,7 @@ What are Process States in Linux?
 
 -------------------------------------------------------------------------------
 
-What is Linux Shell?
+Which are Linux Shell?
 
 Executing commands and communication with Linux OS
 
@@ -109,7 +109,7 @@ Is a script especially written for shell
 
 -------------------------------------------------------------------------------
 
-What is INODE and Process Id?
+What is INODE?
 
 It is a unique name given to each file by OS. Each inode has a unique inode number within a file system
 
