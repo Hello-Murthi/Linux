@@ -25,11 +25,17 @@
 
 * history (see all cmds executed till now)
 
+* env (environment variables)
+
+-------------------------------------------------------------------------------
+
 * tr (translate)
 
 * cat file | tr "[a-z]" "[A-Z]" (relaces all small to with upper case)
 
-* env (environment variables)
+* cat file | tr '[0-9]' 'x' (replace each digit with x)
+
+* cat file | tr -d '[0-9]' (delete all digits)
 
 -------------------------------------------------------------------------------
 
