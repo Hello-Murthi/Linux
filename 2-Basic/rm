@@ -1,0 +1,11 @@
+* rm file
+
+* rm /path/to/dir/* (remove files in sub dir)
+
+* rmdir dir (doesn't delete, if dir has files)
+
+* rmdir dir/dir (delete only child dir and if empty)
+
+* rm -r dir (recursive delete of dir and it's file)
+
+* rm -rf dir (delete both parent n child dirs, with files)

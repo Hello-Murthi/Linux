@@ -1,0 +1,5 @@
+* locate file (to find a file)
+
+* locate -c file (count no. of times)
+
+* locate -i file (case insensitive search)

@@ -1,0 +1,9 @@
+* tail -f file (see real time data - f means follow)
+
+* tail file (shows last 10 lines, 10 is default)
+
+* tail -5 file (custom num)
+
+* tail +25 file (start from 25th line till END)
+
+* tail -10 (see last lines of large file)

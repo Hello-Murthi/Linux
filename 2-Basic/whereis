@@ -1,0 +1,3 @@
+* whereis file (search binary files of cmds and also files, find also same but it's more accurate search)
+
+* whereis -b python (search only binary file)

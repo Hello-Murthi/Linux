@@ -1,0 +1,7 @@
+* mv src dst
+
+* mv -i src dst (intercative mode, asks if u wanna overwrite)
+
+* mv -u src dst (update if src is different)
+
+* mv -v src dst (verbose - print informative msg)

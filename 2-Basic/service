@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------
+
+How do you see if a service is running or not?
+
+	* service docker status
+
+	* service docker start
+
+	* service docker stop
+
+-------------------------------------------------------------------------
+
+How do you check status of all the services?
+
+	* service --status-all

@@ -1,0 +1,50 @@
+
+-------------------------------------------------------------------------
+
+Everything in Unix is considered as file
+
+Including physical devices such as DVD-ROMs, USB devices, and floppy drives
+
+-------------------------------------------------------------------------
+
+Directory Structure:
+
+	/ (Root) = home for all, everything comes under THIS main Dir
+
+	/bin = Executable files
+
+	/dev = Device Drivers
+
+	/etc = Configuration Files...etc
+
+	/lib = Library Files
+
+	/boot = Files for Booting the System
+
+	/home = Home Directory for Users
+
+	/mnt = Mount other temporary file systems Ex: CD-ROM, Floppy for the CD-ROM drive
+
+	/tmp = Holds temporary files used between system boots
+
+	/usr = Used for miscellaneous purposes. Includes administrative commands, shared files, library files
+
+	/var = Contains variable-length files Ex: Log, Any other type of file that contains variable size of data
+
+	/sbin = Contains Binary (executable) files, usually for system administration. Ex: fdisk, ifconfig
+
+	/kernel = Contains Kernel files
+
+-------------------------------------------------------------------------
+
+Mount - File system must be mounted to be usable by system
+
+-------------------------------------------------------------------------
+
+mount -l (see list of mounted devices)
+
+mount = to mount
+
+unmount = to un mount
+
+-------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+* tar -cvf file (compress to .tar)
+ 
+* tar -xvf file (decompress to .tar)
+
+* gzip file (compress to .gz)
+
+* gunzip (uncompress gz files)
+
+* zcat sample.z (see content of z format)

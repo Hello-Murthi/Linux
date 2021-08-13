@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------
+
+* SSH (Secure Shell)
+
+	* A cryptographic network protocol, for operating services securely to execute remote commands
+
+-------------------------------------------------------------------------
+
+* ssh-keygen (generate public/private keys, means to connect remote system without password)
+
+-------------------------------------------------------------------------
+
+ssh murthi@20.185.60.133
+
+ssh dnmurthi@168.62.171.10 -p 50000
+
+ssh -i us-azure-non-prod.pem ubuntu@40.80.150.19 -p 50000
+
+-------------------------------------------------------------------------

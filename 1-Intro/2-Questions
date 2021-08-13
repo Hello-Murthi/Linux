@@ -1,0 +1,183 @@
+
+-------------------------------------------------------------------------
+
+What is Shell?
+
+* Shell is a command line interpreter
+
+* It translates user commands to kernel
+
+-------------------------------------------------------------------------
+
+What are basic elements or components of Linux?
+
+   * User
+   * App
+   * Shell
+   * Kernel
+   * Hardware
+
+-------------------------------------------------------------------------
+
+What is BASH?
+
+   * Bourne Again Shell
+   * Command language interpreter
+   * Same as Bourne Shell but includes additional features
+   * It is default shell on most Linux
+
+-------------------------------------------------------------------------
+
+What are two types of Linux User Mode?
+
+   * Command Line 
+   * GUI
+
+-------------------------------------------------------------------------
+
+What is LILO?
+
+Linux Loader is a bootloader for Linux that is used to load Linux into memory and start the OS
+
+-------------------------------------------------------------------------
+
+What is swap space?
+
+   * Is a space on a hard disk that is used when RAM is full
+
+   * Should be double of RAM
+
+-------------------------------------------------------------------------
+
+What are Process States in Linux?
+
+   * New/Ready
+   * Running
+   * Wait
+   * Terminated
+
+-------------------------------------------------------------------------
+
+Which are Linux Shell?
+
+Executing commands and communication with Linux OS
+
+   * BASH (Bourne Again Shell)
+   * Bourne Shell
+   * CSH (C Shell)
+   * KSH (Korn Shell)
+   * ZSH
+   * TCSH
+
+-------------------------------------------------------------------------
+
+Maximum length for a filename under Linux is 255 bytes 
+
+-------------------------------------------------------------------------
+
+What is daemon?
+
+   * Daemons also referred to as the background process
+
+   * Is a long-running Linux program that runs in the background
+
+-------------------------------------------------------------------------
+
+What is a Zombie Process?
+
+   * Is a process that has finished the execution, but its entry remains in the process table
+
+-------------------------------------------------------------------------
+
+What is Shell Script?
+
+   * Is a script especially written for shell
+
+-------------------------------------------------------------------------
+
+What is INODE?
+
+   * It is a unique name given to each file by OS. Each inode has a unique inode number within a file system
+
+   * It stores various information about files in Linux such as ownership, file size, file type, access mode, number of links, etc.  
+
+-------------------------------------------------------------------------
+
+What is Process ID?
+
+   * It is a unique Id given to each process. It is simply used to uniquely identify an active process throughout the system until the process terminates
+
+-------------------------------------------------------------------------
+
+What is netstat command?
+
+   * Networking tool used for troubleshooting, configuration and display all network connections on a system
+
+-------------------------------------------------------------------------
+
+What is the ping command?
+
+   * Is used to check connection status between source and destination
+
+-------------------------------------------------------------------------
+
+What is UNIX?
+
+   * Not Open Source
+   * No Free
+   * Handles multiple users at same time
+   * Ex: Solaris
+
+-------------------------------------------------------------------------
+
+What is Samba?
+
+   * Samba is an open-source software suite
+
+   * Used to connect Linux machines to Microsoft network resources
+
+-------------------------------------------------------------------------
+
+What are symbolic links?
+
+   * Symbolic links act similarly to shortcuts in Windows
+
+   * Ex: links point to programs, files or directories
+
+   * Access to it without directly go to the entire path name
+
+-------------------------------------------------------------------------
+
+Hard link:
+   
+   * Points directly to the physical file on disk, not on the pathname
+
+   * Means that you rename or move the original file
+
+-------------------------------------------------------------------------
+
+Soft link:
+
+   * Points to file path
+
+-------------------------------------------------------------------------
+
+How do you check open ports? or Listening network sockets? TCP/UDP ports?
+
+   * netstat -p
+
+-------------------------------------------------------------------------
+
+How to check CPU usage of a process?
+
+   * ps -aux | grep "process name"
+
+   * top (both CPU and Mem usage)
+
+-------------------------------------------------------------------------
+
+See logs by date
+
+* cat logFile | grep -i "April 18"
+
+-------------------------------------------------------------------------

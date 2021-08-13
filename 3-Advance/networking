@@ -1,0 +1,41 @@
+-------------------------------------------------------------------------
+
+* ifconfig (interface config)
+
+* ip (advanced command of ifconfig)
+
+* netstat (see network statistics) 
+
+* netstat -at (which ports available)
+
+* ping host (see host is alive or not)
+
+* telnet host (same as above)
+
+* nslookup google.com (see DNS details or connection)
+
+* curl (to transfer data to/from server)
+
+* apt-get (handle packages in linux)
+
+* scp src dst (copy file from remote server)
+
+-------------------------------------------------------------------------
+
+scp -i us-azure-non-prod.pem -P 50000 ubuntu@40.80.150.19:/home/ubuntu/hi.txt /home/murthi/Videos/Softwares/Keys/PEM
+
+-------------------------------------------------------------------------
+
+scp -i us-azure-non-prod.pem -P 50000 /home/murthi/Videos/Softwares/Keys/PEM/hi.txt ubuntu@40.80.150.19:/home/ubuntu/
+
+-------------------------------------------------------------------------
+
+HTTP - 80
+HTTPS - 443
+SSH - 22
+
+-------------------------------------------------------------------------
+
+netstat -ntlp - check all the listening ports and servicess
+
+-------------------------------------------------------------------------

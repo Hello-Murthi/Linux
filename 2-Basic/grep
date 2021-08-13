@@ -1,0 +1,13 @@
+* grep word file (search in case sensitive)
+
+* grep -i word file (search in case insesitive)
+
+* grep -n word file (show word with line no.)
+
+* grep -v word file (show all lines where that word is not)
+
+* grep -c word file (count how many time word present)
+
+* grep amazon * file (print that contains the word amazon)
+
+* grep -L amazon * file (ignore file which has amazon)

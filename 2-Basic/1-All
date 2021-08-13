@@ -1,0 +1,65 @@
+
+-------------------------------------------------------------------------
+
+* man ls (manual)
+
+* clear (screen clear)
+
+* pwd (present working directory)
+
+* echo "Hi" (print)
+
+* > file (write or redirection)
+
+* >> file (append)
+
+* touch file
+
+* vi file
+
+* | (execute multple cmds)
+
+* diff file1 file2 (differentiate)
+
+* export (set and reload the environment variables)
+
+* cron (schedule tasks to be executed) Ex: 30 08 10 06 * /home/murthi/file
+
+* kill PID (kill process)
+
+* bg (to start a job in background, ctrl+z on process and type bg)
+
+* jobs (see all jobs)
+
+* uname -a (host name, kernel version...etc)
+
+* LILO - Linux Loader (Loads OS into RAM)
+
+-------------------------------------------------------------------------
+
+Process Management System Calls 
+
+	* fork() : Used to create a new process
+	* exec() : Execute a new program
+	* wait() : Wait until the process finishes execution
+	* exit() : Exit from the process
+
+-------------------------------------------------------------------------
+
+grep -o ","  file.json | wc -l
+
+awk 'NR == 1 || FNR > 1'  /Source/ > /Destination/
+
+tar -zcvf fileName.tar.gz actualFile
+
+zip -r myfiles.zip mydir
+
+unzip myfiles.zip
+
+ls -1 | wc -l   //To count no. of files in folder
+
+watch -d 'wc -l SKURelationship_*csv'
+
+watch -d 'grep -o "," SkuRelationshipOutputids.json| wc -l'
+
+netstat -ntop | grep :8085 | grep CLOSE_WAIT | wc -l

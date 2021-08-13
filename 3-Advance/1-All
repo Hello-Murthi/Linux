@@ -1,0 +1,20 @@
+
+-------------------------------------------------------------------------
+
+* lsof (list of opened file or files which are running now)
+
+* lscpu (check cpu details/cores)
+
+* id murthi (list IDs of users and groups it belongs to)
+
+* uniq file (remove duplicate lines)
+
+* watch -d (see the output of a process, by default runs every 2 sec)
+
+	* Ex: watch -d free -m
+
+* history (see all cmds executed till now)
+
+* env (environment variables)
+
+-------------------------------------------------------------------------

@@ -1,0 +1,11 @@
+* cd (change dir)
+
+* cd or cd ~ (go to user home dir - /home/murthidn)
+
+* cd / (go to user's root dir)
+
+* cd .. (go to previous/parent directory)
+
+* cd 'dir name' (when dir name has space)
+
+* cd -- (go to previous path)

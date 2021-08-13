@@ -1,0 +1,44 @@
+
+-------------------------------------------------------------------------
+
+* User -> OS (System Calls) | Shell -> Linux Kernel -> Hardware
+
+-------------------------------------------------------------------------
+
+* Linux is bundled with OS and shipped - Linux Distribution
+
+-------------------------------------------------------------------------
+
+* 2 Partition 
+   
+   1. local file system 
+   
+   2. Swap Space - acts as an extended memory for RAM
+
+-------------------------------------------------------------------------
+
+The first process started by the kernel in Linux is “init” and its process id is 1.
+
+-------------------------------------------------------------------------
+
+dmesg - review boot messages
+
+-------------------------------------------------------------------------
+
+DOS (Disk Operating System)
+
+   * It is an OS that runs from a hard disk 
+
+   * It was the first OS system used by IBM
+
+-------------------------------------------------------------------------
+
+Latch (temporary storage device)
+
+-------------------------------------------------------------------------
+
+Data organized into Files ->
+   Files organized into Dir ->
+      Dir organized into tree structure "File System"
+
+-------------------------------------------------------------------------

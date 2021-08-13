@@ -1,0 +1,29 @@
+* cat file
+
+* cat -b file (show line no. for Non Blank lines)
+
+* cat -n file (show line no. for all)
+
+* cat -s file (squeez blank lines or merge blank lines to one)
+
+* cat -E file (show $ at end of each line)
+
+* cat file1 > file2 > file3 (multiple files append)
+
+* cat file1 file2 (see multiple files)
+
+* cat >newfile (create file)
+
+* cat file1 > file2 (copy content of a file to another)
+
+* cat file1 >> file2 (append to another file)
+
+* tac file (display in reverse order)
+
+* cat file | more (if file has lot of content and can’t fit in terminal)
+
+* cat file1 file2 file3 > file4 (merge files)
+
+* cat *.txt (display all text files in dir)
+
+* cat >> file (write in already existing file)

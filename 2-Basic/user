@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------
+
+* who (list who all currently logged in)
+
+* whoami (see current user)
+
+-------------------------------------------------------------------------
+
+* su (switch user - by default root)
+
+* sudo bash (switch to root, if su doesn't work)
+
+* su murthi
+
+* sudo (to execute admin cmds being normal user)
+
+-------------------------------------------------------------------------
+
+* sudo useradd murthi (create new user)
+
+* sudo passwd murthi (add password to murthi)
+
+* sudo userdel murthi (delete user)
+
+* sudo groupadd name (create new group)
+
+* sudo groupdel name (delete group)
+
+-------------------------------------------------------------------------
+
+* $ means normal user - Ex: /home$
+
+* # means super user - Ex: /home#

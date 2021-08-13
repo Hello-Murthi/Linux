@@ -1,0 +1,7 @@
+* awk (script language, used to manupulate data and generate report)
+
+* awk '{print}' file (print every line)
+
+* awk '/naganna/ {print}' file (print if any line has naganna)
+
+* awk '{print $1,$4}' file (print 1 and 4th coloumn)

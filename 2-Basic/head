@@ -1,0 +1,7 @@
+* head file (shows 10 lines default)
+
+* head -5 file (show top 5 lines)
+
+* cat file | grep -5 or head -5 file - (2 ways of printing)
+
+* ls -t | head -3 (also for other cmds, ex: list)

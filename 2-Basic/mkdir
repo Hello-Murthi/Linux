@@ -1,0 +1,5 @@
+* mkdir dir
+
+* mkdir -p dir/dir/dir (create multple dirs)
+
+* mkdir {dir, dir, dir} (create multiple dir in same folder)

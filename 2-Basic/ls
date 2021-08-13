@@ -1,0 +1,33 @@
+* ls (just list)
+
+* ls -l (long format) 
+
+* ls -l /dir
+
+* ls -a (list hidden files)
+
+* ls -A (except . and ..)
+
+* ls -author (lists files with it's author who created)
+
+* ls -la (list long lists and hidden files)
+
+* ls -S (sort files by size)
+
+* ls *.json (list file which are ending with)
+
+* ls -t (list last edited file)
+
+* ls -1 (show one file per line)
+
+* ls --block-size=M file (print files with human readable size MB, K for KB)
+
+* ls -B (except back up files (.php~))
+
+* ls -c (sort by name)
+
+
+* l - long
+* t - last modified
+* r - reverse
+* h - human readble

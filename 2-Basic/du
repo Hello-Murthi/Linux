@@ -1,0 +1,20 @@
+* df -h (disk free in human readble)
+
+-------------------------------------------------------------------------
+
+* du (disk usage same or see which is consuming lot of disk)
+
+* du -sh dir/ (see size of a dir)
+
+* du -h  dir/ | sort -h (sort dir in asce (disk usage))
+
+* du -h  dir/ | sort -h -r (sort dir in reverse (disk usage))
+
+* du -sh  */ | sort -h -r (except sub dir and sort only current dir)
+
+* du -sh  * | sort -h -r (except sub dir and sort only current dir and files)
+
+
+* h - Human Readble
+
+-------------------------------------------------------------------------

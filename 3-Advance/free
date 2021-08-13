@@ -1,0 +1,35 @@
+-------------------------------------------------------------------------
+
+* free -m 
+
+* -m -b -k -g (MB, Bytes, Kilo Bytes, Giga Bytes)
+
+-------------------------------------------------------------------------
+
+* "total        used        free      shared  buff/cache   available"
+
+* total - total installed memory
+
+* used - used memory
+
+* free - unused memory
+
+* shared - memory used by tmp files
+
+* buffers - memory used by kernel buffers
+
+* cached - memory used by the page cache 
+
+* buffers/cache - sum of buffers and cache
+
+-------------------------------------------------------------------------
+
+What is Buffer Memory?
+Is a portion of a computer's memory that is set aside as a temporary holding place for data
+
+-------------------------------------------------------------------------
+
+Cache Memory
+Recently used memory
+
+-------------------------------------------------------------------------

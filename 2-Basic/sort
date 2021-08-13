@@ -1,0 +1,11 @@
+* sort file (sort in asce order)
+
+* sort file file (sort multiple files)
+
+* sort -r file (sort in reverse order)
+
+* sort -f file (sort in case insesitive)
+
+* sort -n file (sort by numerical order)
+
+* cat words.txt | sort -k 2 (sort 2nd line of file)

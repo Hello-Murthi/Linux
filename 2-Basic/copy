@@ -1,0 +1,13 @@
+* cp src dst
+
+* cp -n src dst (doesn't overwrite)
+
+* cp -u src dst (update if src is different)
+
+* cp -r dir dst (recursive copy or copy entire dir with files)
+
+* cp -i src dst (interactive mode, asks if overwrite)
+
+* cp -v src dst (verbose, print informative msg)
+
+* verbose means that it shows what drivers/softwares are loading during startup)
