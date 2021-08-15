@@ -20,6 +20,8 @@
 
 * apt-get (handle packages in linux)
 
+* wget URL (gets content)
+
 * scp src dst (copy file from remote server)
 
 * traceroute www.murthi.com (display how data transmitted from local machine to a remote machine)

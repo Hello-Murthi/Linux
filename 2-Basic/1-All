@@ -35,6 +35,28 @@
 
 * LILO - Linux Loader (Loads OS into RAM)
 
+* finger (gives details about user)
+
+* groups (shows which group belongs to)
+
+* cmp file1 file2 (see if both are same)
+
+* comm file1 file (diff + cmp)
+
+* whatis (what a command is used for)
+
+* more file (shows large file content - cat is good for small files)
+
+	* If we cat large files, we see only last screen content
+
+	* more - displays contents of file one screen at a time for large files
+
+	* shows % as we keep on going
+
+	* use ENTER key to see
+
+* less file (same but additional feature, allows backward as well as forward movement in the file) 
+
 -------------------------------------------------------------------------
 
 Process Management System Calls 
