@@ -1,1 +1,35 @@
-* sed 's/murthi/anusha/' file (replace murthi with anusha)
+-------------------------------------------------------------------------
+
+#stream editor (sed) - searching, find and replace, insertion or deletion
+
+* sed 's/murthi/anusha/' file (replace 1st word with anusha)
+
+s - substring
+
+/ - delimiter
+
+-------------------------------------------------------------------------
+
+Nth Replacement
+
+* sed 's/murthi/anusha/2' file (replace 2nd word with anusha)
+
+-------------------------------------------------------------------------
+
+* sed 's/unix/linux/g' file (replace all, g-global)
+
+* sed 's/unix/linux/3g' file (replace all from 3rd)
+
+* sed '3 s/unix/linux/' file (replace only in 3rd line)
+
+* sed '1,3 s/unix/linux/' file (replace from 1st line to 3rd)
+
+* sed '5d' file (delete 5th line)
+
+* sed '$d' file (delete last line)
+
+* sed '3,6d'file (delete from 3rd line to 6th)
+
+* sed '12,$d' file (delete from 12th line to last)
+
+-------------------------------------------------------------------------

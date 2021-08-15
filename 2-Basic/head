@@ -2,6 +2,12 @@
 
 * head -5 file (show top 5 lines)
 
-* cat file | grep -5 or head -5 file - (2 ways of printing)
+* head -n 5 file (same as above)
+
+* cat file | grep -5 
+
+* head -5 file
 
 * ls -t | head -3 (also for other cmds, ex: list)
+
+* head -q file1 file2 (to use more than 1 file)

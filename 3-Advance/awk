@@ -1,3 +1,6 @@
+#manupulate and generate reports
+#Aho, Weinberger, and Kernighan
+
 * awk (script language, used to manupulate data and generate report)
 
 * awk '{print}' file (print every line)
@@ -5,3 +8,15 @@
 * awk '/naganna/ {print}' file (print if any line has naganna)
 
 * awk '{print $1,$4}' file (print 1 and 4th coloumn)
+
+* awk '{print NR,$0}' file (show line no. and 0 means full row) 
+
+* awk '{print $1,$NF}' file (print 1st and last line, NF = Last Field)
+
+* awk 'NR==3, NR==6 {print NR,$0}' file (shows from 3rd line to 6th, full row)
+
+* awk '{print NR "- " $1 }' file (print 1st item with row no. ex: 1 - murthi)
+
+* awk 'END { print NR }' file (count total lines)
+
+* awk 'length($0) > 10' file (print lines which are more than 10 char)

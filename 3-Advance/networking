@@ -8,9 +8,11 @@
 
 * netstat -at (which ports available)
 
-* ping host (see host is alive or not)
+* ss (Same as netstat, give more info) 
 
-* telnet host (same as above)
+* ping host (checks connectivity between two nodes)
+
+* telnet host (create a remote connection with a system)
 
 * nslookup google.com (see DNS details or connection)
 
@@ -19,6 +21,12 @@
 * apt-get (handle packages in linux)
 
 * scp src dst (copy file from remote server)
+
+* traceroute www.murthi.com (display how data transmitted from local machine to a remote machine)
+
+* tracepath www.murthi.com (same as traceroute, but doesn't require root privileges)
+
+* route (displays and manipulate IP routing table)
 
 -------------------------------------------------------------------------
 

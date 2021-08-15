@@ -4,6 +4,10 @@
 
 * tail -5 file (custom num)
 
+* tail -n 5 file (same)
+
 * tail +25 file (start from 25th line till END)
 
 * tail -10 (see last lines of large file)
+
+* tail -q file1 file2 (to use more than 1 file)

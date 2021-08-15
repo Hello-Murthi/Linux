@@ -1,3 +1,12 @@
-* cut -c1 file (show file portion or coloumn, he 1st coloumn)
+#cutting the sections from each line of files and writing the result to standard output
+
+* cut -c1 file (show file portion or coloumn, here 1st coloumn)
 
 * cut -c1-2 file (1st and 2nd coloumn)
+
+* cut -b 1,2,3 file (bytes, gives letters from 1-3)
+
+* cut -b 1- file (print from letter 1 to END)
+
+* cut -b -3 file (print from 1 to 3rd)
+

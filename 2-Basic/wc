@@ -1,1 +1,17 @@
+#find no. of lines, word count, byte and characters count
+
 * wc file (Count no. of char)
+
+* wc file1 file2 (more than 1 file)
+
+* wc -l file (total lines)
+
+* wc -l file1 file2 (same)
+
+* wc -w file (total words)
+
+* wc -m file (total characters) 
+
+* wc -c file (total bytes)
+
+* wc -L file (show longest line)
