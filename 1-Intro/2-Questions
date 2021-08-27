@@ -181,3 +181,43 @@ See logs by date
 * cat logFile | grep -i "April 18"
 
 -------------------------------------------------------------------------
+
+Find file which is older than 30 days and size > 10 GB
+
+find /path -mtime +30 -size +1G
+
+(mtime = modification times)
+
+
+or
+
+find / -size +1G -mtime +180 -type f -print
+
+Type file and Print it's path
+
+-------------------------------------------------------------------------
+
+Move all zeros to end
+
+List:
+
+a = [1, 2, 0, 0, 0, 3, 6]
+a.sort(reverse=True)
+
+
+Array
+
+arr = [18, 0, 4, 0, 0, 6]
+count = 0
+for i in range(len(arr):
+    if arr[i] != 0:
+        arr[i], arr[count] = arr[count], arr[i]
+        count += 1
+
+-------------------------------------------------------------------------
+
+Diff between TOP and PS -AUX
+
+TOP = shows process statistics continuously until stopped for CPU and Memory 
+
+PS = Shows snapshot of current processes

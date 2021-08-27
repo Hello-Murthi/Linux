@@ -1,0 +1,21 @@
+* kill -l (shows all the available signals or params)
+
+	9 is SIGKIL
+
+* Signals can be specified in three ways:
+
+	By number (-9)
+
+	With SIG prefix (-SIGkill)
+
+	Without SIG prefix (-kill)
+
+	Ex: kill -9 PID
+
+	Ex: kill -SIGkill PID
+
+	EX: kill -kill PID
+
+
+
+To get PID, use PS cmd
