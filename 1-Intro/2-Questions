@@ -202,3 +202,11 @@ Diff between TOP and PS -AUX
 TOP = shows process statistics continuously until stopped for CPU and Memory 
 
 PS = Shows snapshot of current processes
+
+-------------------------------------------------------------------------
+
+Find file which starts from file* in all sub dir
+
+find /path  -type f -name "file*"
+
+-------------------------------------------------------------------------
