@@ -210,3 +210,25 @@ Find file which starts from file* in all sub dir
 find /path  -type f -name "file*"
 
 -------------------------------------------------------------------------
+
+"path": PATH_TO_FILE,
+"port": PORT_NUMBER,
+"controller": CONTROLLER_IP
+
+
+#!/bin/sh
+PATHNAME=$LOGNAME
+PORT=$1
+IP=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+
+
+
+echo $PATHNAME
+echo $PORT
+echo $IP
+
+sed -i 's\PATH_TO_FILE\'$PATHNAME'\' /home/ubuntu/scripts/config.conf
+sed -i 's\PORT_NUMBER\'$PORT'\' /home/ubuntu/scripts/config.conf
+sed -i 's\CONTROLLER_IP\'$IP'\'  /home/ubuntu/scripts/config.conf
+
+-------------------------------------------------------------------------
