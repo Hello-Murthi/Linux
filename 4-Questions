@@ -232,3 +232,13 @@ sed -i 's\PORT_NUMBER\'$PORT'\' /home/ubuntu/scripts/config.conf
 sed -i 's\CONTROLLER_IP\'$IP'\'  /home/ubuntu/scripts/config.conf
 
 -------------------------------------------------------------------------
+
+Reverser NSLOOKUP:
+
+* If domain name has issues, we can do reverse lookup
+* Ex:
+   nslookup 192.169.1.1
+
+* Then it shows the actual domain name
+
+-------------------------------------------------------------------------
