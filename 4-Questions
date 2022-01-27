@@ -249,3 +249,37 @@ List Mounted Drives:
 * df
 
 -------------------------------------------------------------------------
+
+How to secure Linux server?
+
+* Disable the login with the root user
+
+   * Linux virtual server has a “root” as the primary username
+   * So hackers try to obtain and access the password with the bruteforce attacks
+   * Create another user
+
+* Change the SSH port
+   
+   * Hackers use to connect to your SSH server is port 22. If you change this port, will be more secure
+
+* Keep the server software up to date
+
+* Disable unused network ports
+
+* Delete unwanted modules / packages
+
+* Set a strong password
+
+* Use disk partitioning
+
+* Use SFTP instead of FTP
+
+* Use a firewall
+
+* Install antivirus software
+
+* Prevent anonymous FTP upload
+
+* Back up regularly
+
+-------------------------------------------------------------------------
