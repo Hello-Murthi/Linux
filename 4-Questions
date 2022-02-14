@@ -283,3 +283,9 @@ How to secure Linux server?
 * Back up regularly
 
 -------------------------------------------------------------------------
+
+Multiple Words search:
+
+* egrep -w 'word1|word2' /path/to/file
+
+-------------------------------------------------------------------------
