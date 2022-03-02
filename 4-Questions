@@ -289,3 +289,9 @@ Multiple Words search:
 * egrep -w 'word1|word2' /path/to/file
 
 -------------------------------------------------------------------------
+
+Give Full Permission For A User
+
+chmod u+rwx
+
+-------------------------------------------------------------------------

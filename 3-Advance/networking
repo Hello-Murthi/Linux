@@ -40,9 +40,13 @@ scp -i us-azure-non-prod.pem -P 50000 /home/murthi/Videos/Softwares/Keys/PEM/hi.
 
 -------------------------------------------------------------------------
 
-HTTP - 80
-HTTPS - 443
-SSH - 22
+HTTP: 80
+HTTPS: 443
+FTP: 21
+SSH: 22
+TELNET: 23
+SMTP: 25
+MySQL: 3306
 
 -------------------------------------------------------------------------
 

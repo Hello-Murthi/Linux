@@ -1,0 +1,49 @@
+
+-------------------------------------------------------------------------
+
+1xx: Informational
+2xx: Success
+3xx: Redirection
+4xx: Client Error
+5xx: Server Error
+
+-------------------------------------------------------------------------
+
+Check Server Logs To Troubleshoot
+
+-------------------------------------------------------------------------
+
+Common Errors:
+
+* 400 Bad Request
+	- HTTP Syntax is Invalid
+
+* 401 Unauthorized
+	- User trying to access resource is not authenticated
+
+* 403 Forbidden
+	- User made a valid request but the server is refusing to serve the request
+
+	- File Permissions
+	- .htaccess - deny access of certain resources to specific IP addresses 
+	- Index File Does Not Exist - does not have a default index file
+
+* 404 Not Found
+	- Server unable to locate the requested file or resource
+
+-------------------------------------------------------------------------
+
+* 500 Internal Server Error
+	- Server cannot process the request for an unknown reason
+	- Server misconfiguration
+
+* 502 Bad Gateway
+	- If server is a gateway or proxy server, is not receiving a valid response from the backend servers
+
+* 503 Service Unavailable
+	- Server is overloaded or under maintenance
+
+* 504 Gateway Timeout
+	- If server is a gateway or proxy server, and it is not receiving a response from the backend servers within the allowed time period
+
+-------------------------------------------------------------------------
