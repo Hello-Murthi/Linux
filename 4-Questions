@@ -295,3 +295,27 @@ Give Full Permission For A User
 chmod u+rwx
 
 -------------------------------------------------------------------------
+
+When Disk is FULL, What will you do?
+
+* Remove packages that are no longer required
+   - sudo apt-get autoremove
+
+* Uninstall unnecessary applications
+
+* Clean up apt cache in Ubuntu
+   - Advanced Package Tool
+   - It keeps a cache of previously downloaded and installed packages even after they’ve been uninstalled
+   - sudo apt-get clean
+
+* Clear systemd journal logs
+
+* Remove older versions of Snap applications
+
+-------------------------------------------------------------------------
+
+How do you take output of previous cmd to next cmd?
+
+* By | Pipe
+
+-------------------------------------------------------------------------
