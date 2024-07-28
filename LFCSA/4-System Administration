@@ -1,0 +1,409 @@
+
+Systemd is a system and service manager for Linux,
+
+---
+
+Linux File Editor
+• A text editor is a program which enables you to create and manipulate data
+(text) in a Linux file
+• There are several standard text editors available on most Linux systems
+• vi - Visual editor
+• ed - Standard line editor
+• ex - Extended line editor
+• emacs - A full screen editor
+• pico - Beginner’s editor
+• vim - Advance version of vi
+• Our editor = vi (available in almost every Linux distribution)
+
+---
+
+User Account Management
+(Need to be in root user)
+Commands
+• useradd
+• groupadd
+• userdel
+• groupdel
+• usermod
+Files
+• /etc/passwd
+• /etc/group
+• /etc/shadow
+Example:
+useradd –g superheros –s /bin/bash –c “user description” –m –d
+/home/spiderman spiderman
+
+----
+
+The chage command – per user
+• Example
+chage [-m mindays] [-M maxdays] [-d lastday] [-I inactive] [-E expiredate] [-W warndays] user
+
+• File = /etc/login.defs
+    • PASS_MAX_DAYS 99999
+    • PASS_MIN_DAYS 0
+    • PASS_MIN_LEN 5
+    • PASS_WARN_AGE 7
+
+
+
+The chage command – per user
+• Example
+chage [-d lastday] [-m mindays] [-M maxdays] [-W warndays] [-I inactive] [-E expiredate] user
+-d = 3. Last password change (lastchanged) : Days since Jan 1, 1970 that password was last changed
+-m = 4. Minimum : The minimum number of days required between password changes i.e. the number of days left before the user is allowed to change his/her password
+-M = 5. Maximum : The maximum number of days the password is valid (after that user is forced to change his/her password)
+-W = 6. Warn : The number of days before password is to expire that user is warned that his/her password must be changed
+-I = 7. Inactive : The number of days after password expires that account is disabled
+-E = 8. Expire : days since Jan 1, 1970 that account is disabled i.e. an absolute date specifying when the login may no longer be used.
+
+
+
+----
+
+Switch Users and sudo Access
+Commands
+• su – username
+• sudo command
+• visudo - Run the visudo to edit the /etc/sudoers file. This file defines the policies applied by the sudo command. 
+File
+• /etc/sudoers
+
+
+----
+
+Monitor Users
+• who
+• last
+• w
+• finger
+• id
+
+----
+
+Talking to Users:
+•users
+•wall
+•write
+
+----
+
+Linux Account Authentication:
+
+
+• Types of Accounts
+    • Local accounts
+    • Domain/Directory accounts
+
+
+• Active Directory = Microsoft
+• IDM = Identity Manager
+• WinBIND = Used in Linux to communicate with Windows(Samba)
+• OpenLDAP (open source)
+• IBM Directory Server
+• JumpCloud
+• LDAP = Lightweight Directory Access Protocol
+
+----
+
+
+System Utility Commands
+• date
+• uptime
+• hostname
+• uname
+• which
+• cal
+• bc
+
+----
+
+Processes and Jobs
+• Application = Service
+• Script
+• Process
+• Daemon
+• Threads
+• Jobs
+
+----
+
+
+Process / Services Commands
+• systemctl or service
+• ps
+• top
+• kill
+• crontab
+• at
+
+----
+
+systemctl command:
+
+• systemctl command is a new tool to control system services
+• It is available in version 7 and later and it replaces the service command
+• Usage example:
+    systemctl start|stop|status servicename.service (firewalld)
+    systemctl enable servicename.service
+    systemctl restart|reload servicename.service
+    systemctl list-units --all
+
+
+• To add a service under systemctl management:
+    Create a unit file in /etc/systemd/system/servicename.service
+• To control system with systemctl
+    systemctl poweroff
+    systemctl halt
+    systemctl reboot
+
+
+----
+
+
+• ps command stands for process status and it displays all the currently running processes in the Linux system
+
+Usage examples:
+• ps = Shows the processes of the current shell
+
+PID = the unique process ID
+TTY = terminal type that the user logged-in to
+TIME = amount of CPU in minutes and seconds that the process has been running
+CMD = name of the command
+
+• ps –e = Shows all running processes
+• ps aux = Shows all running processes in BSD format
+• ps –ef = Shows all running processes in full format listing (Most commonly used)
+• ps –u username = Shows all processes by username.
+
+----
+
+
+“top” command
+• top command is used to show the Linux processes and it provides a real-time view of the running system
+• This command shows the summary information of the system and the list of processes or threads which are currently managed by the Linux Kernel
+• When the top command is executed then it goes into interactive mode and you can exit out by hitting q
+• Usage: top
+
+    PID: Shows task’s unique process id
+    USER: Username of owner of task
+    PR: The “PR” field shows the scheduling priority of the process from the perspective of the kernel
+    NI: Represents a Nice Value of task. A Negative nice value implies higher priority, and positive Nice value means lower priority.
+    VIRT: Total virtual memory used by the task
+    RES: Memory consumed by the process in RAM
+    SHR: Represents the amount of shared memory used by a task
+    S: This field shows the process state in the single-letter form
+    %CPU: Represents the CPU usage
+    %MEM: Shows the Memory usage of task
+    TIME+: CPU Time, the same as ‘TIME’, but reflecting more granularity through hundredths of a second
+
+
+
+• top –u iafzal = shows tasks/processes by user owned
+• top then press c = shows commands absolute path
+• top then press k = kill a process by PID within top session
+• top then M and P = To sort all Linux running processes by Memory usage
+
+Please note:
+Top command refreshes the information every 3 seconds
+
+
+----
+
+“kill” command:
+• kill command is used to terminate processes manually
+• It sends a signal which ultimately terminates or kills a particular process or group of processes
+
+Usage:
+kill [OPTION] [PID]
+OPTION = Signal name or signal number/ID
+PID = Process ID
+
+kill –l = to get a list of all signal names or signal number
+
+Most used signals are:
+kill PID = Kill a process with default signal
+kill -1 = Restart
+kill -2 = Interrupt from the keyboard just like Ctrl C
+kill -9 = Forcefully kill the process
+kill -15 = Kill a process gracefully
+
+
+Other similar kill commands are:
+killall
+pkill
+
+----
+
+“at” command
+• at command is like crontab which allows you to schedule jobs but only once
+• When the command is run it will enter interactive mode and you can get out by pressing Ctrl D
+
+
+Usage:
+    o at HH:MM PM = Schedule a job
+    o atq = List the at entries
+    o atrm # = Remove at entry
+    o atd = at daemon/service that manages scheduling
+    o systemctl status atd = To manage the atd service
+
+• Create at entry by scheduling a task:
+    at 4:45PM → enter
+    echo “This is my first at entry” > at-entry
+    Crtl D
+
+----
+
+Process Management
+• Background = Ctrl-z, jobs and bg
+• Foreground = fg
+• Run process even after exit = nohup process &
+    OR = nohup process > /dev/null 2>&1 &
+• Kill a process by name = pkill
+• Process priority = nice (e.g. nice –n 5 process)
+    The niceness scale goes from -20 to 19. The lower the number more priority that task gets
+• Process monitoring = top
+• List process = ps.
+
+----
+
+System Monitoring
+
+• top
+• df
+• dmesg
+• iostat 1
+• netstat
+• free
+• cat /proc/cpuinfo
+• cat /proc/meminfo
+
+----
+
+
+Log Monitoring:
+
+Another and most important way of system administration is log monitor
+
+Log Directory = /var/log
+• boot
+• chronyd = NTP
+• cron
+• maillog
+• secure
+• messages
+• httpd
+
+----
+
+System Maintenance Commands
+•shutdown
+•init 0-7
+•reboot
+•halt
+
+----
+
+Changing System Hostname
+• hostnamectl – set-hostname newhostname
+
+----
+
+Finding System Information
+• cat /etc/redhat-release
+• uname –a
+• dmidecode
+
+----
+
+System Architecture
+• Differences between a 32-bit and 64-bit CPU
+A big difference between 32-bit processors and 64-bit processors is the number of calculations per second they can perform
+
+Linux = arch (command)
+
+----
+
+Terminal Control Keys:
+
+• CTRL-u - erase everything you've typed on the command line
+• CTRL-c - stop/kill a command
+• CTRL-z - suspend a command
+• CTRL-d - exit from an interactive program (signals end of data). 
+
+----
+
+Terminal Commands
+• clear - Clears your screen
+• exit - Exit out of the shell, terminal or a user session
+• script:
+The script command stores terminal activities in a log file that can be
+named by a user, when a name is not provided by a user, the default
+file name, typescript is used
+
+----
+
+SOS Report
+• What is SOS Report?
+    • Collect and package diagnostic and support data
+
+• Command
+    • sosreport
+
+----
+
+Environment Variables
+• To view all environment variables
+    • printevn OR env
+
+• To view ONE environment variable
+    • echo $SHELL
+
+• To set the environment variables
+    • export TEST=1
+    • echo $TEST
+
+• To set environment variable permanently
+    • vi .bashrc
+    • TEST=‘123’
+    • export TEST
+
+• To set global environment variable permanently
+    • vi /etc/profile or /etc/bashrc
+    • Test=‘123’
+    • export TEST
+
+----
+
+
+Special Permissions with setuid, setgid and sticky bit:
+
+• All permissions on a file or directory are referred as bits
+
+There are 3 additional permissions in Linux:
+
+• setuid: bit tells Linux to run a program with the effective user id of the owner instead of the executor: (e.g. passwd command) → /etc/shadow
+
+• setgid: bit tells Linux to run a program with the effective group id of the owner instead of the executor: (e.g. locate or wall command)
+    Please note: This bit is present for only files which have executable permissions 
+
+• sticky bit: a bit set on files/directories that allows only the owner or root to delete those files
+
+
+
+
+• To assign special permissions at the user level
+    • chmod u+s xyz.sh
+
+• To assign special permissions at the group level
+    • chmod g+s xyz.sh
+
+• To remove special permissions at the user or group level
+    • chmod u-s xyz.sh
+    • chmod g-s xyz.sh
+
+• To find all executables in Linux with setuid and setgid permissions
+    • find / -perm /6000 -type f
+
+----
+

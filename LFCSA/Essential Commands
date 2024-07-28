@@ -1,0 +1,63 @@
+SSH - Connection Encrypted
+Telnet - Connection Not Encrypted
+
+journalctl - to see system logs
+
+Man Command - Gives the details about a command
+--help - Gives how to use a command
+
+apropos directory:
+    - give the commands related to directory
+    - Gets the commands by searching String Patterns in Man Databases
+
+sudo mandb - To load Man data/info of commands First Time!
+
+Absolute Path Ex: /var/lib/logs/file.txt
+Relative Path Ex: ../../../File.txt
+
+cd / = goes to root dir
+cd   = goes to home
+cd - = goes to previous dir
+
+/ (root) is Ultimate First Path, Under Root Home...etc dir comes
+
+Hard Link:
+    - When you create a file, that will have an I Node and I Node will have it's own Data Blocks
+    - If you use ln command to create another copy of same file (to save disk), its another copy of file
+    - So it's like one actual hard file is reffered by 2 places, even if you delete in 1 place, it will be available in another 2nd place
+    - stat command can give all the info on a file
+    - if you delete 2nd file also, it's just link to that file removed but actually it doesn't remove data blocks instead it will be marked as ready to override by other File/Inode
+    - Supports only for Files not directories
+    - Supports only same type of File Systems
+    - stat - command used to check
+    - ln - command to link multiple files
+
+Soft Link:
+    - Path to a file/Shortcut of a file but not a link to Inode
+    - ln -s is used to create it
+    - Also called symbolic link
+    - You can link both file and directory
+    - Also works with different file systems
+    - ln -s - command is used to do soft link
+
+
+
+SUID: Allows a file to be executed with the owner's permissions.
+SGID: Allows a file to be executed with the group's permissions or ensures new files in a directory inherit the directory’s group.
+Sticky Bit: Restricts file deletion within a directory to the file’s owner, directory’s owner, or root.
+
+
+Search Files:
+find / -name '*.jpeg'
+find / -size +10M
+find / -mmin -1  = (All files modified in last 1 min)
+find -name file.txt = Checks in current directory and case sensitive, won't work for File.txt
+find -iname file.txt = Case insensitive
+find -name "f*" = all files starts with lower f
+find -name "f*" -size +10M = AND Operator
+find -name "f*" -o -size +10M = OR Operator
+find -not -name "f*" = Get files which doesn't start with f
+find perm 664 = Gets files which has exact 664
+find perm -664 = Gets files which has at least 664 (means even if file has extra permission, gets it)
+
+

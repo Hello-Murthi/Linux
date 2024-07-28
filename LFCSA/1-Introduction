@@ -1,0 +1,98 @@
+
+Unix, GNU, Linux History:
+Before Linux, Unix was born but it was not FREE, it had many proprietary apps
+So later GNU (GNU's Not Unix) was born and available for FREE or A Free Unix-Like OS But it missing a Kernel 
+Then, Linux born with everything (Kernel) and FREE and became famous
+
+
+
+Inside Linux:
+
+Kernel:
+    - The core of the UNIX system. Loaded at system start up (boot). Memory-resident control program.
+    - Manages the entire resources of the system, presenting them to you and every other user as a coherent system. Provides service to user applications such as device management, process scheduling, etc.
+    - Example functions performed by the kernel are:
+        1. Managing the machine's memory and allocating it to each process.
+        2. Scheduling the work done by the CPU so that the work of each user is carried out as efficiently as is possible.
+        3. Accomplishing the transfer of data from one part of the machine to another
+        4. Interpreting and executing instructions from the shell
+        5. Enforcing file access permissions
+    - Kernel resides in /boot
+
+Shell:
+    - Whenever you login to a Unix system you are placed in a shell program. The shell's prompt is usually visible at the cursor's position on your screen. To get your work done, you enter commands at this prompt.
+    - The shell is a command interpreter; it takes each command and passes it to the operating system kernel to be acted upon. It then displays the results of this operation on your screen.
+    - Several shells are usually available on any UNIX system, each with its own strengths and weaknesses.
+    - Different users may use different shells. Initially, your system adminstrator will supply a default shell, which can be overridden or changed. The most commonly available shells are:
+        1. Bourne shell (sh)
+        2. C shell (csh)
+        3. Korn shell (ksh)
+        4. TC Shell (tcsh)
+        5. Bourne Again Shell (bash)
+    - Each shell also includes its own programming language. Command files, called "shell scripts" are used to accomplish a series of tasks.
+
+
+Utilities:
+    - UNIX provides several hundred utility programs, often referred to as commands.
+    - Accomplish universal functions:
+        1. Editing
+        2. File maintenance
+        3. Printing
+        4. Sorting
+        5. Programming support
+        6. Online info etc.
+    -Modular: single functions can be grouped to perform more complex tasks
+
+
+Types of Operating Systems:
+1. Desktop Operating Systems, e.g., Microsoft Windows, macOS, and Linux such as Ubuntu
+2. Server Operating Systems, e.g., Windows Server, Linux distributions like CentOS, Red Hat Enterprise Linux
+3. Mobile Operating Systems, e.g., Android, iOS, Windows Mobile
+4. Embedded Operating Systems used in devices like routers, smart TVs, automobiles, home appliances etc.
+5. Real-Time Operating Systems (RTOS) used in critical systems like medical equipment, car ECUs, aerospace,
+defense, network firewalls, home security system etc.
+
+
+What is Linux?
+Widely used in servers and cloud computing
+• Free software philosophy
+• Strong command line interface
+• Faster processing
+• Enhanced security
+• Customization because of open-source nature
+• Community support
+• Understanding of other operating systems
+• Career opportunities.
+
+OS Distribution:
+• Unix: Solaris, HP-UX, AIX. BSD etc.
+• Linux: Red Hat, CentOS, Fedora, Ubuntu, SUSE, Kali etc
+
+
+Linux distributions:
+
+• FUbuntu
+• Fedora
+• Debian
+• Red Hat Enterprise Linux (RHEL)
+• CentOS
+• Arch Linux
+• openSUSE
+• Linux Mint
+• Gentoo
+• Slackware
+• Alpine Linux
+• Kali Linux
+
+
+Linux Users:
+Linux is used by a wide range of users and organizations due to its versatility, stability, and open-source nature.
+• Developers
+• Educational institutions
+• Government agencies
+• Enterprise and businesses
+• Tech companies
+• Cloud and web servers
+• Supercomputers and research facilities
+• Telecommunications and networking
+• Media and entertainment

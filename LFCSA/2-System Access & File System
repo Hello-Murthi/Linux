@@ -1,0 +1,151 @@
+On Terminal By default:
+# Symbol os Root User
+$ is other User
+
+But these symbols can be changed
+
+sudo su - change to user root
+su murthi - change to user murthi
+
+cat /etd/passwd - gives all users
+
+hostname - give Host name
+
+----
+
+To create n number of a file, ex: abc1, abc2, abc3...nth
+tocuh abc{1..9}
+
+----
+
+Root User:
+
+Linux has super-user account called root
+• root is the most powerful account that can create, modify, delete accounts and make changes to system configuration files
+• Linux is case-sensitive system
+• ABC is NOT same as abc
+• Avoid using spaces when creating files and directories
+• Linux kernel is not an operating system. It is a small software within Linux operating system that takes commands from users and pass them to system hardware or peripherals
+• Linux is mostly CLI not GUI
+• Linux is very flexible as compared to other operating systems.
+
+----
+
+What is a Filesystem?
+• It is a system used by an operating system to manage files. The system controls how data is saved or retrieved
+
+Operating system stores files and directories in an organized and structured way
+• System configuration file = Folder A
+• User files = Folder B
+• Log files = Folder C
+• Commands or scripts = Folder D and so on
+
+There are many different types of filesystems. In general, improvements have been made to filesystems with new releases of operating systems and each new filesystem has been given a different name
+• e.g. ext3, ext4, xfs - Linux
+• NTFS, FAT - Windows
+...etc
+
+----
+
+File System Structure:
+
+/boot - Contains file that is used by the boot loader (grub.cfg)
+/root - root user home directory. It is not same as /
+/dev - System devices (e.g. disk, cdrom, speakers, flashdrive, keyboard etc.)
+/etc - Configuration files
+/bin → /usr/bin - Everyday user commands
+/sbin → /usr/sbin - System/filesystem commands
+/opt - Optional add-on applications (Not part of OS apps)
+/proc - Running processes (Only exist in Memory)
+/lib → usr/lib - C programming library files needed by commands and apps (check by - strace -e open pwd)
+/tmp - Directory for temporary files
+/home - Directory for user
+/var - System logs
+/run - System daemons that start very early (e.g. systemd and udev) to store temporary runtime files like PID files
+/mnt - To mount external filesystem. (e.g. NFS)
+/media - For cdrom mounts.
+
+Whatever you do, create...etc in Linux, is stored a Files in respective above directories
+
+----
+
+Linux File Types:
+
+- Regular file
+d Directory
+l link
+c Special file or device file
+s socket
+p Named pipe
+b Block device
+
+----
+
+What is Root?
+• There are 3 types of root on Linux system
+1. Root account: root is an account or a username on Linux machine and it is the most powerful account which has access to all commands and files
+2. Root as /: the very first directory in Linux is also referred as root directory
+3. Root home directory: the root user account also has a directory located in /root which is called root home directory
+
+----
+
+Changing Password of User:
+
+passwd userid
+
+----
+
+File System Paths
+• There are two paths to navigate to a filesystem
+✓Absolute Path
+✓Relative Path
+
+• An absolute path always begins with a "/". This indicates that the path starts at the root directory. An example of an absolute path is
+cd /var/log/httpd
+
+• A relative path does not begin with a "/". It identifies a location relative to your current position. An example of a relative path is:
+cd /var
+cd log
+cd httpd
+
+----
+
+Find Files and Directories:
+
+Two main commands are used to find files/directories
+•find
+•locate
+
+Locate v/s Find:
+
+Locate command is a background process and searches the file in the database whereas
+Find command searches in the filesystem.
+
+The locate command is much faster than find command.
+
+--
+
+• locate uses a prebuilt database, which should be regularly updated, while find iterates over a filesystem to locate files Thus, locate is much faster than find , but can be inaccurate if the database (can be seen as a cache) is not updated
+
+• To update locate database run updatedb
+
+----
+
+A wildcard is a character that can be used as a substitute for any of a class of characters in a search
+• * - represents zero or more characters - Ex: touch abc*
+• ? - represents a single character - ls ?bc*
+• [] - represents a range of characters - ls *.[xyz]*
+•\ (backslash) = is used as an "escape" character, i.e. to protect a subsequent special character. Thus, "\\" searches for a backslash. Note you may need to use quotation marks and backslash(es).
+• ^ (caret) = means "the beginning of the line". So "^a" means find a line starting with an "a".
+• $ (dollar sign) = means "the end of the line". So "a$" means find a line ending with an "a".
+
+----
+
+Soft and Hard Links:
+
+• inode = Pointer or number of a file on the hard disk
+• Soft Link = Link will be removed if file is removed or renamed - Ex: ln -s /home/user/file
+• Hard Link = Deleting renaming or moving the original file will not affect the hard link - Ex: ln /home/user/file
+
+---
+
