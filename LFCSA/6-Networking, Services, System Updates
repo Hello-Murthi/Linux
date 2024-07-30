@@ -1,0 +1,548 @@
+Ping is commonly used to test the availability and response time of a remote device or server.
+Telnet is used to establish a connection and access a remote computer's command line interface
+
+while Ping is used to test the connectivity and response time between two devices on a network.
+
+----
+
+yum (CentOS), apt-get (Other Linux) - Look for the local file config and downloads, and installs
+rpm - install already downloaded, doesn't need internet
+
+yum update - updates existing package
+yum upgrade - deletes old one and re-install new package - we can'r roll back
+
+----
+
+telnet - unsecure connection
+sshd secured connectiona and should be running as a process to accept SSH connections
+
+
+----
+
+DNS:
+
+need bind package to make it work
+named is the service to run
+
+By default listen on 53 port
+
+----
+
+NTPD port - 123
+
+
+
+
+===========
+
+
+Network Components
+• IP
+• Subnet mask
+• Gateway
+• Static vs. DHCP
+• Interface
+• Interface MAC
+
+----
+
+Network Files and Commands
+• Interface Detection
+• Assigning an IP address
+• Interface configuration files
+• /etc/nsswitch.conf
+• /etc/hostname
+• /etc/sysconfig/network
+• /etc/sysconfig/network-scripts/ifcfg-nic
+• /etc/resolv.conf
+
+----
+
+• Network Commands
+• ping
+• ifconfig
+• ifup or ifdown
+• netstat
+• tcpdump
+
+----
+
+NIC = Network Interface Card
+Example:
+ethtool enp0s3
+
+NIC(Network Interface Card) bonding is also known as Network bonding. It can be defined as the aggregation or combination of multiple NIC into a single bond interface.
+
+It’s main purpose is to provide high availability and redundancy
+
+----
+
+New Network Utilities
+
+• Getting started with NetworkManager
+• Network configuration methods
+    • nmtui
+    • nmcli
+    • nm-connection-editor
+    • GNOME Settings.
+
+----
+
+New Network Utilities
+
+NetworkManager is a service that provides set of tools designed specifically to make it easier to manage the networking configuration on Linux systems and is the default network management service on RHEL 8
+• It makes network management easier
+• It provides easy setup of connection to the user
+• NetworkManager offers management through different tools such as GUI, nmtui, and nmcli.
+
+----
+
+
+System Updates and Repos
+• yum (CentOS), apt-get (other Linux)
+• rpm (Redhat Package Manager)
+
+
+----
+
+Download Files or Apps
+
+Linux = wget
+
+• Example in Linux:
+wget http://website.com/filename
+
+----
+curl and ping Commands
+
+• Linux = curl
+• Linux = ping
+
+• Example in Linux:
+curl http://website.com/filename
+curl –O http://website.com/filename
+
+ping www.google.com
+
+----
+
+FTP – File Transfer Protocol
+
+• The File Transfer Protocol is a standard network protocol used for the transfer of computer files between a client and server on a computer network. FTP is built on a client-server model architecture using separate control and data connections between the client and the server. (Wikipedia)
+• Protocol = Set of rules used by computers to communicate
+• Default FTP Port = 21
+
+----
+
+SCP – Secure Copy Protocol
+
+• The Secure Copy Protocol or “SCP” helps to transfer computer files securely from a local to a remote host. It is somewhat similar to the File Transfer Protocol “FTP”, but it adds security and authentication
+• Protocol = Set of rules used by computers to communicate
+• Default SCP Port = 22 (same as SSH)
+
+----
+
+rsync – Remote Synchronization
+
+• rsync is a utility for efficiently transferring and synchronizing files within the same computer or to a remote computer by comparing the modification times and sizes of files
+• rsync is a lot faster than ftp or scp
+• This utility is mostly used to backup the files and directories from one server to another
+• Default rsync Port = 22 (same as SSH)
+
+----
+
+Local Repository:
+
+Command: createrepo
+
+
+----
+
+Rollback Updates and Patches
+
+• Rollback a package or patch
+    • yum install <package-name>
+    • yum history undo <id>
+
+• Rollback an update
+    • Downgrading a system to minor version (ex: RHEL7.1 to RHEL7.0) is not recommended as this might leave the system in undesired or unstable state
+    • yum update= Update will preserve them
+    • yum upgrade = Upgrade will delete obsolete packages
+    • yum history undo <id>
+
+----
+
+SSH and Telnet
+
+• Telnet = Un-secured connection between computers
+• SSH = Secured
+
+----
+
+DNS = Domain Name System
+• Purpose?
+    Hostname to IP (A Record)
+    IP to Hostname (PTR Record)
+    Hostname to Hostname (CNAME Record)
+
+• Files
+    /etc/named.conf
+    /var/named
+
+----
+
+Hostname/IP Lookup
+
+Commands used for DNS lookup
+    • nslookup
+    • dig
+
+----
+
+NTP
+• Purpose?
+    Time synchronization
+• File
+    /etc/ntp.conf
+• Service
+    systemctl restart ntpd
+• Command
+    ntpq
+
+
+NTP (Network Time Protocol)
+The NTP system is based on Internet time servers, computers with access to atomic clocks such as those operated by the U.S. government. 
+
+
+----
+
+chronyd
+
+• Purpose? = Time synchronization
+• Package name = chronyd
+• Configuration file = /etc/chronyd.conf
+• Log file = /var/log/chrony
+• Service = systemctl start/restart chronyd
+• Program command = chronyd.
+
+----
+
+timedatectl
+
+• The timedatectl command is a new utility for RHEL/CentOS 7/8 based distributions, which comes as a part of the systemd system and service manager
+• It is a replacement for old traditional date command
+• The timedatectl command shows/change date, time, and timezone
+• It synchronizes the time with NTP server as well
+    • You can either use chronyd or ntpd and make the ntp setting in timedatectl as yes
+    • Or you can use systemd-timesyncd daemon to synchronize time which is a replacement for ntpd and chronyd
+
+
+----
+
+Sendmail
+
+• Purpose?
+    Send and receive emails
+• Files
+    /etc/mail/sendmail.mc
+    /etc/mail/sendmail.cf
+    /etc/mail
+• Service
+    systemctl restart sendmail
+
+Command
+mail –s “subject line” email@mydomain.com
+
+----
+
+• Sendmail is a program in Linux operating systems that allows systems administrator to send email from the Linux system
+• It uses SMTP (Simple Mail Transfer Protocol)
+• SMTP port = 25
+• It attempts to deliver the mail to the intended recipient immediately and, if the recipient is not present, it queues messages for later delivery
+
+----
+
+Web Server (httpd)
+
+• Purpose = Serve webpages
+• Service or Package name = httpd
+• Files:
+    /etc/httpd/conf/httpd.conf
+    /var/www/html/index.html
+
+• Log Files = /var/log/httpd/
+
+----
+
+rsyslog
+
+• Purpose = Generate logs or collect logs from other servers
+• Service or package name = rsyslog
+• Configuration file= /etc/syslog.conf
+
+----
+
+Linux OS Hardening
+
+• User Account:
+User account naming convention
+• User account user IDs
+• User password policies –
+    chage –l username
+    chage –help
+    /etc/shadow
+    vi /etc/login.defs
+• Disable old password
+    cd /etc/pam.d/system-auth
+• User or service account files and directories permission
+
+
+• Remove un-wanted packages
+    Install what you need
+    Remove packages no longer in use
+
+• Stop un-used Services
+    List all running services
+    systemctl (List only running service)
+    systemctl –a (List every service running or not)
+    telnet, ftp, NFS etc
+
+• Check on Listening Ports
+    netstat -tunlp
+
+• Secure SSH Configuration
+    Disable direct root login
+    Change SSH port
+
+• Enable Firewall (iptables/firewalld)
+    Older version = iptables
+    New version = firewalld
+
+• Enable SELinux
+Security-Enhanced Linux (SELinux) is a security architecture integrated into the 2.6.x kernel using the Linux Security Modules (LSM). It is a project of the United States National Security Agency (NSA) and the SELinux community.
+
+SELinux defines the access and transition rights of every user, application, process, and file on
+the system
+
+
+• Change Listening Services Port Numbers
+• Keep your OS up to date (security patching)
+
+----
+
+OpenLDAP Installation
+Like active directory, to manage more no. of users
+
+• OpenLDAP Service
+    • slapd
+
+• Configuration Files
+    • /etc/openldap/slapd.d
+
+----
+
+traceroute
+
+• The traceroute command is used in Linux to map the journey that a packet of information undertakes from its source to its destination. One use for traceroute is to locate when data loss occurs throughout a network, which could signify a node that's down.
+• Because each hop in the record reflects a new server or router between the originating PC and the intended target, reviewing the results of a traceroute scan also lets you identify slow points that may adversely affect your network traffic.
+
+• Example
+# traceroute www.google.com
+
+----
+
+Configure and Secure SSH
+
+SSH
+• SSH stands for secure shell
+
+• Open SSH is a package/software
+• Its service daemon is sshd
+• SSH port # 22
+
+•  SSH itself is secure, meaning communication through SSH is always encrypted, but there should be some additional configuration can be done to make it more secure
+• Following are the most common configuration an administrator should take to secure SSH
+
+Configure Idle Timeout Interval
+Avoid having an unattended SSH session, you can set an Idle timeout interval
+
+▪ Become root
+▪ Edit your /etc/ssh/sshd_config file and add the following line:
+▪ ClientAliveInterval 600
+▪ ClientAliveCountMax 0
+▪ # systemctl restart sshd
+
+The idle timeout interval you are setting is in seconds (600 secs = 10 minutes). Once the interval has passed, the idle user will be automatically logged out
+
+Disable root login
+Disabling root login should be one of the measures you should take when setting up the system for the first time. It disable any user to login to the system with root account
+
+▪ Become root
+▪ Edit your /etc/ssh/sshd_config file and replace PermitRootLogin yes to no
+▪ PermitRootLogin no
+▪ # systemctl restart sshd
+
+Disable Empty Passwords
+You need to prevent remote logins from accounts with empty passwords for added security.
+▪ Become root
+▪ Edit your /etc/ssh/sshd_config file and remove # from the following line
+▪ PermitEmptyPasswords no
+▪ # systemctl restart sshd
+
+Limit Users’ SSH Access
+To provide another layer of security, you should limit your SSH logins to only certain users who need remote access
+▪ Become root
+▪ Edit your /etc/ssh/sshd_config file and add
+▪ AllowUsers user1 user2
+▪ # systemctl restart sshd
+
+Use a different port
+By default SSH port runs on 22. Most hackers looking for any open SSH servers will look for port 22 and changing can make the system much more secure
+▪ Become root
+▪ Edit your /etc/ssh/sshd_config file and remove # from the following line and change the port number
+▪ Port 22
+▪ # systemctl restart sshd
+
+----
+
+SSH-Keys - Access Remote Server without Password
+
+Two reasons to access a remote machine
+• Repetitive logins
+• Automation through scripts
+
+Keys are generated at user level
+• iafzal
+• root
+
+
+Step 1 — Generate the Key
+# ssh-keygen
+
+Step 2 — Copy the Key to the server
+# ssh-copy-id root@192.168.1.x
+
+Step 3 — Login from client to server
+# ssh root@192.168.1.x
+# ssh –l root 192.168.1.x
+
+• SSH is a secure way to login from host A to host B
+• Repetitive tasks require login without a password
+
+----
+
+Cockpit:
+
+• Cockpit is a server administration tool sponsored by Red Hat, focused on providing a modern-looking and user-friendly interface to manage and administer servers
+• Cockpit is the easy-to-use, integrated, glanceable, and open web-based interface for your servers
+• The application is available in most of the Linux distributions such as, CentOS, Redhat, Ubuntu and Fedora
+• It is installed in Redhat 8 by default and it is optional in version 7
+• It can monitor system resources, add or remove accounts, monitor system usage, shut down the system and perform quite a few other tasks all through a very accessible web connection
+
+----
+
+Introduction to Firewall:
+
+What is Firewall
+• A wall that prevents the spread of fire
+• When data moves in and out of a server its packet information is tested against the firewall rules to see if it should be allowed or not
+• In simple words, a firewall is like a watchman, a bouncer, or a shield that has a set of rules given and based on that rule they decide who can enter and leave
+• There are 2 type of firewalls in IT
+    • Software = Runs on operating system
+    • Hardware = A dedicated appliance with firewall software
+
+There are 2 tools to manage firewall in most of the Linux distributions
+• iptables = For older Linux versions but still widely used
+• firewalld = For newer versions like 7 and up
+
+----
+
+
+iptables:
+
+• The function of iptables tool is packet filtering
+• The packet filtering mechanism is organized into three different kinds of structures: tables, chains and targets
+
+1. tables = table is something that allows you to process packets in specific ways. There are 4 different types of tables, filter, mangle, nat and raw
+2. chains = The chains are attached to tables, These chains allow you to inspect traffic at various points. There are 3 main chains used in iptables
+    ▪ INPUT = incoming traffic
+    ▪ FORWARD = going to a router, from one device to another
+    ▪ OUTPUT = outgoing traffic
+        • chains allow you to filter traffic by adding rules to them
+        • Rule = if traffic is coming from 192.168.1.35 then go to defined target
+3. targets = target decides the fate of a packet, such as allowing or rejecting it. There are 3 different type of targets
+    ▪ ACCEPT = connection accepted
+    ▪ REJECT = Send reject response
+    ▪ DROP = drop connection without sending any response
+
+
+----
+
+firewalld
+
+• Firewalld works the same way as iptables but of course it has it own commands
+    • firewall-cmd
+• It has a few pre-defined service rules that are very easy to turn on and off
+    • Services such as: NFS, NTP, HTTPD etc.
+• Firewalld also has the following:
+    • Table
+    • Chains
+    • Rules
+    • Targets
+
+----
+
+Tune System Performance
+
+Linux system comes fined tunned by default when you install, however there are a few tweaks that can be done based on system performance and application requirements
+
+In this lesson we will learn…
+• Optimize system performance by selecting a tuning profile managed by the tuned daemon
+• Prioritize or de-prioritize specific processes with the nice and renice commands
+
+
+What is tuned?
+• Tuned pronounced as tune-d
+• Tune is for system tuning and d is for daemon
+• It is systemd service that is used to tune Linux system performance
+• tuned package name is tuned
+• The tuned service comes with pre-defined profiles and settings (List of profile will be discussed in the next page)
+• Based on selected profile the tuned service automictically adjust system to get the best performance. E.g. tuned will adjust networking if you are downloading a large file or it will adjust IO settings if it detects high storage read/write
+• The tuned daemon applies system settings when the service starts or upon selection of a new tuning profile.
+
+
+Another way of keeping your system fine-tuned is by prioritizing processes through nice and renice command
+
+
+To set the process priority
+
+nice –n # process-name
+e.g. nice –n -15 top
+
+• To change the process priority
+
+renice –n # process-name
+e.g. renice –n 12 PID.
+
+----
+
+Kickstart:
+
+Kickstart is a method to automate the Linux installation without the need for any intervention from the use
+
+----
+
+DHCP
+
+• DHCP stands for Dynamic Host Configuration Protocol
+• In order to communicate over the network, a computer needs to have an IP address
+• DHCP server is responsible to automatically assign IP addresses to servers, laptops, desktops, and other devices on the network
+
+
+• Right now in our home how IPs are assigned to our devices?
+    • Answer → The router or gateway given to you by your ISP provider
+• How IPs are assigned in corporate world?
+    • Answer → Dedicated routers run DHCP service to assign IPs on the network
+
+----
+
