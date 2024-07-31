@@ -1,4 +1,19 @@
 
+System Run Level:
+
+Main Run level
+• 0 Shut down (or halt) the system
+• 1 Single-user mode; usually aliased as s or S
+• 6 Reboot the system
+
+Other Run levels
+• 2 Multiuser mode without networking
+• 3 Multiuser mode with networking
+• 5 Multiuser mode with networking and GUI.
+
+----
+
+
 Computer Boot Process (Irrespective of OS and Generally)
 
 1. Power On
@@ -61,6 +76,47 @@ Key Functions of Systemd:
 
 ------
 
+Message of the Day:
+
+Once again, message of the day is the first message users will see when they login to the Linux machine
+• Message of the day file location
+• /etc/profile.d/motd.sh
+
+----
+
+Disk Partition
+• Commands for disk partition
+    • df
+    • fdisk
+
+
+Adding Disk and Creating Partition
+• Purpose? = Out of Space, Additional Apps etc.
+• Commands for disk partition
+    • df
+    • fdisk
+
+
+----
+
+Computer Storage:
+
+• Local Storage
+    • RAM, HDD, SSD, etc.
+
+• DAS (Direct Attached Storage)
+    • CD/DVD, USB flash drive, external disk directly attached with USB or other cables
+
+• SAN (Storage Area Network)
+    • Storage attached through iSCSI or fiber cable
+
+• NAS (Network Attached Storage)
+    • Storage attached over network (TCP/IP)
+    • E.g. Samba, NFS etc.
+
+----
+
+
 When you extend a Disk:
 
 1. Add New Disk
@@ -92,7 +148,7 @@ Hard Disk -> Partition -> Physical Volume -> Volume Group -> Logical Volume -> A
 
 ----
 
-Now e have 2 ways of Volume attach:
+Now we have 2 ways of Volume attach:
 
 1. Creating Disk Partitions Directly
 When to use:
@@ -112,6 +168,52 @@ Advanced Features: Features like striping, mirroring, and pooling of storage can
 
 
 ----
+
+When we use LVM?
+
+/oracle = 1.0G
+/oracle = Full
+
+Few Options:
+• Delete older files to free up disk space
+• Add new physical disk mount to /oracle2
+• Create a new virtual disk and mount to /oracle2
+• Or extend /oracle through LVM.
+
+----
+
+Add/Extend Swap Space:
+
+What is swap? – CentOS.org
+Swap space in Linux is used when the amount of physical memory (RAM) is full. If the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space. While swap space can help machines with a small amount of RAM, it should not be considered a replacement for more RAM. Swap space is located on hard drives, which have a slower access time than physical memory
+
+Recommended swap size = Twice the size of RAM
+M = Amount of RAM in GB, and S = Amount of swap in GB, then
+
+If M < 2
+then S = M *2
+Else S = M + 2
+
+
+Commands
+• dd
+• mkswap
+• swapon or swapoff
+
+
+----
+
+Implement Advanced Storage Features:
+
+Red Hat 8 introduces the next generation volume management solution called Stratis
+• It uses thin provisioning by default
+• It combines the process of creating logical volume management (LVM) and creation of
+filesystems into one management
+• In LVM if a filesystem system gets full you will have to extend it manually whereas stratis
+extends the filesystem automatically if it has available space in its pool
+
+----
+
 
 RAID:
 
@@ -158,3 +260,84 @@ mdadm: This is the primary utility for managing RAID arrays in Linux. It allows 
 Latest File System - XFS
 EXT...etc Old
 
+---
+
+File System Check (fsck and xfs_repair)
+
+• Linux fsck utility is used to check and repair Linux filesystems (ext2, ext3, ext4, etc.)
+• Linux xfs_repair utility is used to check and repair Linux filesystems for xfs filesystem type
+• Depending on when was the last time a file system was checked, the system runs the fsck during boot time to check whether the filesystem is in consistent state
+• System administrator could also run it manually when there is a problem with the filesystems
+• Make sure to execute the fsck on an unmounted file systems to avoid any data corruption issues.
+• AForce a filesystem check even if it’s clean using option –f
+• Attempt to fix detected problems automatically using option -y
+• The xfs_repair utility is highly scalable and is designed to repair even very large file systems with many inodes efficiently. Unlike other Linux file systems, xfs_repair does not run at boot time
+• The following are the possible exit codes for fsck command
+
+
+----
+
+System Backup (dd Command)
+
+5 Different Types of Backups
+1. System backup (entire image using tools such as acronis, Veeam, Commvault etc.)
+2. Application backup (3rd party application backup solution)
+3. Database backup (Oracle dataguard, SQL backup etc.)
+4. Filesystem backup (tar, gzip directoris etc.)
+5. Disk backup or disk cloning (dd command)
+
+• dd is a command-line utility for Unix and Unix-like operating systems whose primary purpose is to convert and copy files
+• As a result, dd can be used for tasks such as backing up the boot sector of a hard drive, and obtaining a fixed amount of random data
+• Please note the source and destination disk should be the same size
+
+
+----
+
+Network File System (NFS)
+
+• NFS stands for Network File System, a file system developed by Sun Microsystems, Inc.
+• It is a client/server system that allows users to access files across a network and treat them as if they resided in a local file directory
+• For example, if you were using a computer linked to a second computer via NFS, you could access files on the second computer as if they resided in a directory on the first computer. This is accomplished through the processes of exporting (the process by which an NFS server provides remote clients with access to its files) and mounting (the process by which client map NFS shared filesystem)
+
+
+----
+
+Samba
+
+• Samba is a Linux tool or utility that allows sharing for Linux resources such as files and printers to with other operating systems
+• It works exactly like NFS but the difference is NFS shares within Linux or Unix like system whereas Samba shares with other OS (e.g. Windows, MAC etc.)
+• For example, computer “A” shares its filesystem with computer “B” using Samba then computer “B” will see that shared filesystem as if it is mounted as the local filesystem
+
+----
+
+Samba (smb vs. CIFS)
+
+• Samba shares its filesystem through a protocol called SMB (Server Message Block) which was invented by IBM
+• Another protocol used to share Samba is through CIFS (Common Internet File System) invented by Microsoft and NMB (NetBios Named Server)
+• CIFS became the extension of SMB and now Microsoft has introduced newer version of SMB v2 and v3 that are mostly used in the industry
+• In simple term, most people, when they use either SMB or CIFS, are talking about the same exact thing 
+
+----
+
+NAS Device for NFS or Samba
+
+A storage can be carved on a Linux server, and it can be shared with another Linux machine through NFS or to a Windows machine through Samba service
+
+NFS/Samba or any NAS service can be setup through a dedicated NAS device
+
+----
+
+SATA and SAS
+
+• SATA Stands for Serial Advanced Technology Attachment and SAS stands for Serial Attached SCSI (SCSI Stands for Small Computer System Interface, typically pronounced as “scuzzy”)
+• Both SAS and SATA utilize serial communication. Serial communication means that the highway has both lanes
+•  The main difference between them is that SAS drives are faster and more reliable than SATA drives
+• SAS is generally more expensive, and it’s better suited for use in servers or in processing-heavy computer workstations. SATA is less expensive, and it’s better suited for desktop file storage
+• In a SATA cable, all 4 wires are placed within the same cable. In a SAS cable, the 4 wires are separated into 2 different cables
+
+Why divide the wires between 2 cables???
+• So you can connect more devices to one another. With a SATA cable, you can only link the motherboard and the storage drive. You could hook up an expansion device, but that takes up valuable room inside your computer.
+• With a SAS cable, you can hook up the motherboard to both a storage drive and another piece of hardware that has SAS connectors
+
+
+----
