@@ -1,0 +1,160 @@
+
+Computer Boot Process (Irrespective of OS and Generally)
+
+1. Power On
+2. Power Goes to Mother Board (CPU)
+3. CPU will just starts but doesn't have any instructions or doesn't know what to do further
+4. So CPU asks BIOS for the Instructions
+5. BIOS has a tiny Software and that little chip is ROM (Read Only Memory)
+6. BIOS also need some instructions from CMOS (located next to BIOS) - (Complementary Metal Oxide Semiconductor)
+7. CMOS has BIOS Settings like System Time, Date, Hardware Setting and CMOS is powered by Battery but not Power
+8. CPU Reads one of the instructions from BIOS called - POST (Power-On Self Test)
+9. POST means - it goes to every device attached and in working condition
+10. Now BIOS goes to DISK (MBR - Master Boot Record)
+11. MBR has the information about OS
+12. From MBR, OS will get loaded to RAM 
+13. From here, OS will come to picture, whatever code is instruction/written on OS, will start 
+14. Once it's loaded in to Memory and applications started then goes back to CPU to process 
+15. This entire process is called Bootstarp!!!
+
+Power On -> CPU -> BIOS -> MBR -> RAM -> CPU!!!
+
+
+-----------
+
+
+Linux Boot Process (almost like above but little extra below)
+
+1. Power On
+2. BIOS
+3. MBR (Around 512 MB Size)
+4. MBR Executes GRUB (Grand Unified Boot Loader)
+5. GRUB calls Kernel (we can select type of kernels)
+6. Kernel calls Init
+7. Init loads temporary root file system until Kernel is loaded also contains devices compiled which helps to access Hard drive partition and other Hardware
+8. Init Executes Run Level programs ( 7 types are the in Run level) (like calling OS)
+
+------
+
+Linux Boot Process  (New)
+
+1. After CentOS/RHEL 7, little bit has been changed on Boot Process
+2. systemd - is new service manager in CentOS/RHEL 7 which manages boot sequence
+
+1. BIOS = Basic Input and Output Setting (firmware interface) and POST = Power-On Self-Test started
+2. MBR = Master Boot Record -> Information saved in the first sector of a hard disk that indicates where the GRUB2 is located so it can be loaded in computer RAM
+3. GRUB2 = Grand Unified Boot Loader v2 - Loads Linux kernel /boot/grub2/grub.cfg
+4. Kernel = Core of Operating System, Loads required drivers from initrd.img, Starts the first OS process (systemd)
+5. Systemd = System Daemon (PID # 1), It then starts all the required processes, Reads = /etc/systemd/system/default.target to bring the system to the run-level, Total of 7 run-levels (0 thru 6)
+
+
+
+Systemd:
+Is a system and service manager for Linux operating systems. It is designed to manage system startup, service management, and other essential functions of a Linux system. Here's a breakdown of what it does and why it's significant:
+
+Key Functions of Systemd:
+
+1. System Initialization (Init):
+    Systemd is often used as the default init system, which means it's responsible for booting the system and starting up all the necessary services and processes.
+
+2. Service Management: Systemd manages services and daemons. Services are typically started, stopped, and restarted based on configuration files. Systemd provides tools to control and monitor these services, such as systemctl and journalctl.
+
+------
+
+When you extend a Disk:
+
+1. Add New Disk
+2. Assign type of File System (Latest is XFS)
+3. Mount the volume
+4. Persist the volume mount in /etc/fstab
+
+If you want unmount anything, can be done by unmount
+If you run mount -a - mounts all given in /etc/fstab again 
+
+----
+
+LVM:
+
+LVM allows disks to be combined together
+
+Physical Volume -> Volume Groups (vg) -> Logical Volumes (lv) (Ex: in windows C:, D:. E:)
+
+* You can group any number of Physical Volumes together
+* Add Physical Volume to Groups (ex: datavg)
+* Use it as Logical Volumes (lv)
+
+LVM related Disk names starts with /dev - e x: /dev/mapper
+
+
+Mains Steps:
+
+Hard Disk -> Partition -> Physical Volume -> Volume Group -> Logical Volume -> Attach File Systm Type - Mount Volume & Persist
+
+----
+
+Now e have 2 ways of Volume attach:
+
+1. Creating Disk Partitions Directly
+When to use:
+
+Simple Use Cases: If your storage needs are straightforward and you don’t require advanced features, creating and managing partitions directly on a disk might be sufficient. For instance, if you have a single disk and want to partition it into several sections, you can use tools like fdisk, parted, or gparted.
+Fixed Disk Sizes: When the size of your partitions and the number of partitions won’t change frequently, managing partitions directly is simpler and easier.
+Non-Root Filesystems: If you’re working with non-root filesystems or data storage where flexibility in resizing isn’t a concern, direct partitioning works well.
+
+
+2. Creating Disks through LVM
+When to use:
+
+Dynamic Storage Needs: If you need flexibility in managing disk space, such as resizing volumes, adding new disks, or creating snapshots, LVM is beneficial. It allows you to create logical volumes that can be resized or moved without altering physical partitions.
+Volume Management: If you plan to use multiple physical disks or need to manage storage across multiple disks, LVM helps in creating logical volumes that span across these disks.
+Snapshots and Backups: LVM supports snapshots, allowing you to take point-in-time backups of your data, which can be crucial for certain types of applications and backup strategies.
+Advanced Features: Features like striping, mirroring, and pooling of storage can be easily managed using LVM.
+
+
+----
+
+RAID:
+
+Which stands for Redundant Array of Independent Disks, is a technology used to combine multiple physical hard drives into a single logical unit for the purpose of data redundancy, performance improvement, or both. In Linux, RAID is managed through the software RAID system known as md (multiple devices) or, more recently, through the mdadm tool, which provides more advanced features and management options.
+
+Common RAID Levels
+RAID 0 (Striping):
+
+Description: Distributes data evenly across multiple drives to improve performance.
+Pros: Increases read and write speeds.
+Cons: No redundancy; if one drive fails, all data is lost.
+Use Case: Suitable for high-performance applications where data loss isn't critical.
+RAID 1 (Mirroring):
+
+Description: Duplicates the same data on two or more drives.
+Pros: Provides redundancy; if one drive fails, data is still available on another.
+Cons: Higher cost due to duplication of storage.
+Use Case: Ideal for systems where data integrity and availability are critical.
+RAID 5 (Striping with Parity):
+
+Description: Distributes data and parity (error-checking information) across all drives.
+Pros: Offers a good balance of performance, redundancy, and storage efficiency.
+Cons: Write performance can be slower due to parity calculations; requires at least three drives.
+Use Case: Commonly used in servers and applications requiring high read performance with fault tolerance.
+RAID 6 (Striping with Double Parity):
+
+Description: Similar to RAID 5, but with an extra layer of parity.
+Pros: Can withstand the failure of two drives.
+Cons: More overhead for parity, which can impact write performance.
+Use Case: Suitable for environments where data protection is more critical than write performance.
+RAID 10 (1+0, Mirroring + Striping):
+
+Description: Combines RAID 1 and RAID 0 by first mirroring data, then striping it across multiple drives.
+Pros: Provides both high performance and redundancy.
+Cons: Requires at least four drives and has a higher cost.
+Use Case: Ideal for high-performance applications with redundancy needs.
+
+
+Managing RAID in Linux
+mdadm: This is the primary utility for managing RAID arrays in Linux. It allows you to create, manage, and monitor RAID arrays.
+
+-----
+
+Latest File System - XFS
+EXT...etc Old
+
