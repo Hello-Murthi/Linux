@@ -1,0 +1,42 @@
+
+When you create a file, to assigned default perissions - umask
+Ex: umask u+rw,g+r,o-rwx
+
+---
+
+du -a = gives all disk usage size of all directories
+when you ping, ping will use ICMP protocal ex: ping google.com
+
+---
+
+System is Running Slow
+
+• Understanding the problem
+    • Processing
+    • Disk writing
+    • Networking (file transfer etc.)
+    • Hardware
+• Troubleshooting Steps:
+    • Check if the right system is reported or you are on the right system
+    • Check disk space (df –h, du)
+    • Check processing (top, free, lsmem, /proc/meminfo, vmstat, pmap
+    <PID>, dmidecode, lscpu or /proc/cpuinf)
+    • Check disk issues (iostat –y 5, lsof)
+    • Check networking (tcpdump –i enps03, lsof -i -P -n | grep -i listen,
+    netstat –plnt or ss –plnt, iftop)
+    # yum install epel-release
+    • Check system uptime (uptime) # yum install iftop
+    • Check logs
+    • Check hardware status by logging into system console
+    • Other tools (htop, iotop, iptraf, psacct)
+
+----
+
+No PPT:
+Filesystem Color Definition
+Troubleshooting File Issues
+Troubleshooting Change Directory Issues
+Fixing Corrupted FileSystem
+SELinux
+
+
